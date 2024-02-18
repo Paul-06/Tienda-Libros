@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Programming\\CSharp\\ASPNET\\src\\AppStore\\wwwroot\\Uploads\\dfd1356f-e574-4a28-b6d5-acbec67a29fa.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\dfd1356f-e574-4a28-b6d5-acbec67a29fa.jpg"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\ASPNET\\src\\AppStore\\wwwroot\\Uploads\\harry.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\harry.jpg"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\ASPNET\\src\\AppStore\\wwwroot\\Uploads\\quijote.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\quijote.jpg"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\ASPNET\\src\\AppStore\\wwwroot\\css\\form.css",
+      "PackagePath": "staticwebassets\\css\\form.css"
+    },
+    {
+      "Id": "D:\\Programming\\CSharp\\ASPNET\\src\\AppStore\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AppStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AppStore.props",
+      "PackagePath": "build\\AppStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AppStore.props",
+      "PackagePath": "buildMultiTargeting\\AppStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AppStore.props",
+      "PackagePath": "buildTransitive\\AppStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

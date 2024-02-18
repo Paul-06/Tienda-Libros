@@ -1,0 +1,43 @@
+@model AppStore.Models.DTO.LoginModel;
+@* Sin layout *@
+@{
+
+}
+
+<form class="w-40" asp-action="Login" method="POST">
+    <h2 class="pb-10">Login</h2>
+    @* Caja para Username *@
+    <div class="input-container">
+        <label asp-for="Username" class="w-40">Username</label>
+        <input type="text" class="input" asp-for="Username">
+    </div>
+    @* Para mostrar advertencia *@
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Username"></span>
+    </div>
+
+    @* Caja para Password *@
+    <div class="input-container">
+        <label asp-for="Password" class="w-40">Password</label>
+        <input type="password" class="input" asp-for="Password">
+    </div>
+    @* Para mostrar advertencia *@
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Password"></span>
+    </div>
+
+    @* Mensaje de error (credenciales inválidas) *@
+    @* Consumiremos el TempData que existe en UserAuthenticationController *@
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert mb-1">
+            @TempData["msg"]
+        </div>
+    }
+
+    @* Botón *@
+    <div class="input-container">
+        <button class="btn btn-default" type="submit">Login</button>
+    </div>
+    
+</form>

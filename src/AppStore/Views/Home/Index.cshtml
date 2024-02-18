@@ -1,0 +1,43 @@
+@* Esto es el modelo que usaremos para mostrar las películas. *@
+@model AppStore.Models.DTO.LibroListVm
+
+@* Esta cabecera representa la notacion de tipo C#. *@
+@{
+    Layout = "_Layout"; // Agregamos el Layout que tenemos en Shared
+}
+
+<section class="search-bar">
+    <form>
+        <input type="text" placeholder="buscar libro">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</section>
+
+<section class="movies">
+
+    @foreach (var libro in Model.LibroList!)
+    {
+        <div class="movie-card" onclick="window.location.href='/Home/LibroDetail?libroId=@libro.Id'">
+            <div class="movie-image">
+                <img src="/Uploads/@libro.Imagen" width="200" height="300">
+            </div>
+            <div class="movie-info">
+                <h4>@libro.Titulo</h4>
+                <h4>@libro.CategoriasNames</h4>
+                <h4>@libro.CreateDate</h4>
+            </div>
+        </div>
+    }
+
+</section>
+
+<div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a class="active" href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+</div>

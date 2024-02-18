@@ -1,0 +1,41 @@
+@model AppStore.Models.DTO.CategoriaListVm
+@* Sin layout *@
+@{
+    
+}
+
+
+<div class="tbl-container">
+    <h2>Administración de libros</h2>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model.CategoriaList!)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>
+                    @* Agregaremos dos botones *@
+                    <a href="/Categoria/Edit?id=@item.Id" class="btn btn-default">
+                        <i class="fa fa-edit"></i>
+                    </a>
+
+                    <a href="/Categoria/Delete?id=@item.Id" onclick="return window.confirm('¿Estás seguro?')" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+
+            </tr>
+        }
+    </table>
+
+    @* Botón Atrás *@
+    <div class="input-container">
+        <a href="/Categoria/Add" class="btn btn-sec">Atrás</a>
+    </div>
+</div>
+

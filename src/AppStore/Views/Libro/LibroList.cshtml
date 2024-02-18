@@ -1,0 +1,47 @@
+@model AppStore.Models.DTO.LibroListVm;
+@* Sin layout *@
+@{
+
+}
+
+<div class="tbl-container">
+    <h2>Administración de libros</h2>
+
+    <table>
+        <tr>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th>Fecha Publicación</th>
+            <th>Imagen</th>
+            <th>Autor</th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model.LibroList!)
+        {
+            <tr>
+                <td>@item.Titulo</td>
+                <td>@item.CategoriasNames</td>
+                <td>@item.CreateDate</td>
+                <td><img src="/Uploads/@item.Imagen" style="height: 60px; width: 80px;"></td>
+                <td>@item.Autor</td>
+                <td>
+                    @* Agregaremos dos botones *@
+                    <a href="/Libro/Edit?id=@item.Id" class="btn btn-default">
+                        <i class="fa fa-edit"></i>
+                    </a>
+
+                    <a href="/Libro/Delete?id=@item.Id" onclick="return window.confirm('¿Estás seguro?')" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+
+            </tr>
+        }
+    </table>
+
+    @* Botón Atrás *@
+    <div class="input-container">
+        <a href="/Libro/Add" class="btn btn-sec">Atrás</a>
+    </div>
+</div>

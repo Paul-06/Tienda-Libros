@@ -1,0 +1,74 @@
+@model AppStore.Models.Domain.Libro
+@* Sin layout *@
+@{
+
+}
+
+@* La propiedad enctype permitirá el envío de archivos desde el formulario *@
+<form class="w-40" asp-action="Add" method="POST" enctype="multipart/form-data">
+
+    <h2>Agregar Libro</h2>
+
+    @* Caja para Titulo *@
+    <div class="input-container">
+        <label asp-for="Titulo" class="w-40">Titulo</label>
+        <input type="text" class="input" asp-for="Titulo">
+    </div>
+    @* Para mostrar advertencia *@
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Titulo"></span>
+    </div>
+
+    @* Caja para Autor *@
+    <div class="input-container">
+        <label asp-for="Autor" class="w-40">Autor</label>
+        <input type="text" class="input" asp-for="Autor">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Autor"></span>
+    </div>
+
+    @* Caja para Imagen *@
+    <div class="input-container">
+        <label asp-for="ImageFile" class="w-40">Imagen</label>
+        <input type="file" class="input" asp-for="ImageFile">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="ImageFile"></span>
+    </div>
+
+    @* Caja para Categorias *@
+    <div class="input-container">
+        <label asp-for="Categorias" class="w-40">Categorias</label>
+        <select asp-items="Model.CategoriasList" class="input" asp-for="Categorias" multiple> @* Combo box *@
+            <option value="">--Seleccionar--</option>
+        </select>
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Categorias"></span>
+    </div>
+
+    @* Caja para Fecha de Creación *@
+    <div class="input-container">
+        <label asp-for="CreateDate" class="w-40">Fecha de publicación</label>
+        <input type="text" class="input" asp-for="CreateDate">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="CreateDate"></span>
+    </div>
+
+    @* Si hay un error *@
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert-mb1">
+            @TempData["msg"]
+        </div>
+    }
+
+    @* Botón *@
+    <div class="input-container">
+        <button class="btn btn-default">Guardar</button>
+        <a href="/Libro/LibroList" class="btn btn-sec">Ver todo</a>
+    </div>
+
+</form>

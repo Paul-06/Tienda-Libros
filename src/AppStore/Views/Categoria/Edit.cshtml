@@ -1,0 +1,43 @@
+@model AppStore.Models.Domain.Categoria
+@* Sin layout *@
+@{
+
+}
+
+@* La propiedad enctype permitirá el envío de archivos desde el formulario *@
+<form class="w-40" asp-action="Edit" method="POST">
+
+    <h2>Actualizar Categoría</h2>
+
+    @*
+        Al igual que cuando trabajamos con Spring Boot, en la página
+        de edición del registro ocultaremos el input que contendrá al ID
+    *@
+    <input type="hidden" class="input" asp-for="Id">
+
+
+    @* Caja para Nombre *@
+    <div class="input-container">
+        <label asp-for="Nombre" class="w-40">Nombre</label>
+        <input type="text" class="input" asp-for="Nombre">
+    </div>
+    @* Para mostrar advertencia *@
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Nombre"></span>
+    </div>
+
+    @* Si hay un error *@
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert-mb1">
+            @TempData["msg"]
+        </div>
+    }
+
+    @* Botón *@
+    <div class="input-container">
+        <button class="btn btn-default">Guardar</button>
+        <a href="/Categoria/CategoriaList" class="btn btn-sec">Ver todo</a>
+    </div>
+
+</form>
